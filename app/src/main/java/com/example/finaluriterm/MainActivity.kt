@@ -10,4 +10,5 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().replace(R.id.mainContainer,LoginFrag()).commit()
     }
 
+
 }

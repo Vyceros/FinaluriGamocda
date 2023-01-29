@@ -3,16 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFrag">
-
+    app:startDestination="@id/movies">
     <fragment
-        android:id="@+id/loginFrag"
-        android:name="com.example.finaluriterm.LoginFrag"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        android:id="@+id/profile"
+        android:name="com.example.finaluriterm.Profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profile_to_movies"
+            app:destination="@id/movies" />
+    </fragment>
     <fragment
-        android:id="@+id/registerFrag"
-        android:name="com.example.finaluriterm.RegisterFrag"
-        android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
+        android:id="@+id/movies"
+        android:name="com.example.finaluriterm.Movies"
+        android:label="Movies"
+        tools:layout="@layout/moviews_fragment">
+        <action
+            android:id="@+id/action_movies_to_profile"
+            app:destination="@id/profile" />
+    </fragment>
 </navigation>

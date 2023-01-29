@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
 
 class RegisterFrag : Fragment() {
     private lateinit var email1 : EditText
@@ -29,21 +31,22 @@ class RegisterFrag : Fragment() {
         register1 = view.findViewById(R.id.registerBtn)
 
         register1.setOnClickListener() {
-            val fragment2 = LoginFrag()
-            val transaction = fragmentManager?.beginTransaction()
-            transaction?.replace(R.id.mainContainer, fragment2)
-            transaction?.commit()
 
-        register1.setOnClickListener(){
-            var password = pass.text.toString()
-            var email = email1.text.toString()
+            if (email1.text.isNotEmpty() && pass.text.isNotEmpty()){
+                FirebaseAuth.getInstance().createUserWithEmailAndPassword(email1.text.toString(),pass.text.toString())
+                    .addOnSuccessListener {
+                        Toast.makeText(requireContext(), "successfully registered", Toast.LENGTH_SHORT).show()
 
-            if (password.isNotEmpty() && email.isNotEmpty()){
-                //DAAMATE PIROBEBI RO GAIGEB FIREBASE ROGOR CHAAMATO
+                        val fragment2 = LoginFrag()
+                        val transaction = fragmentManager?.beginTransaction()
+                        transaction?.replace(R.id.mainContainer, fragment2)
+                        transaction?.commit()
+
+                    }
             }
 
 
-        }
+
 
 
         }

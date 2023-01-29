@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginFrag : Fragment() {
     private lateinit var email : EditText
@@ -32,6 +34,21 @@ class LoginFrag : Fragment() {
             val transaction = fragmentManager?.beginTransaction()
             transaction?.replace(R.id.mainContainer, fragment1)
             transaction?.commit()
+        }
+
+
+        login.setOnClickListener {
+            if (email.text.isNotEmpty() &&password.text.isNotEmpty()){
+
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(email.text.toString(),password.text.toString())
+                    .addOnSuccessListener { Toast.makeText(requireContext(), "welcome", Toast.LENGTH_SHORT).show()
+                        val fragment1 = MainFragments()
+                        val transaction = fragmentManager?.beginTransaction()
+                        transaction?.replace(R.id.mainContainer, fragment1)
+                        transaction?.commit()
+
+                    }
+            }
         }
         return view
     }
