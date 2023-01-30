@@ -2,11 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/movieFrag"
+        android:id="@+id/movies"
         android:icon="@drawable/baseline_movie_24"
         android:title="Movies"/>
     <item
-        android:id="@+id/profileFrag"
+        android:id="@+id/profile"
         android:icon="@drawable/baseline_person_24"
         android:title="Profile"/>
 </menu>

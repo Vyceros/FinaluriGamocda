@@ -15,20 +15,37 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainFragments:Fragment(R.layout.main_fragment) {
 
-    private lateinit var bottomNavigationView: BottomNavigationView
-    private lateinit var navController: NavController
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.main_fragment, container, false)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-//        navController = findNavController()
-//        bottomNavigationView = view.findViewById(R.id.navgiation)
-//        bottomNavigationView.setupWithNavController(navController)
+        val bottomNavigationView = view.findViewById<BottomNavigationView>(R.id.navgiation)
 
 
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.movies -> {
+                    // Replace the current fragment with Fragment1
+                    val fragment1 =Movies()
+                    val transaction = fragmentManager?.beginTransaction()
+                    transaction?.replace(R.id.mainContainer1, fragment1)
+                    transaction?.commit()
+                    true
+                }
 
-
-
-
+                R.id.profile-> {
+                    // Replace the current fragment with Fragment1
+                    val fragment1 = Profile()
+                    val transaction = fragmentManager?.beginTransaction()
+                    transaction?.replace(R.id.mainContainer1, fragment1)
+                    transaction?.commit()
+                    true
+                }
+                else -> false
+            }
+        }
+        return view
     }
 }
