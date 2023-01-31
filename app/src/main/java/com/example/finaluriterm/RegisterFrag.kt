@@ -35,7 +35,7 @@ class RegisterFrag : Fragment() {
             if (email1.text.isNotEmpty() && pass.text.isNotEmpty()){
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(email1.text.toString(),pass.text.toString())
                     .addOnSuccessListener {
-                        Toast.makeText(requireContext(), "successfully registered", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Successfully registered", Toast.LENGTH_SHORT).show()
 
                         val fragment2 = LoginFrag()
                         val transaction = fragmentManager?.beginTransaction()

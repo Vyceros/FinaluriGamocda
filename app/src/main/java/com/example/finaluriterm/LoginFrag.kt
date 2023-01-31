@@ -41,7 +41,7 @@ class LoginFrag : Fragment() {
             if (email.text.isNotEmpty() &&password.text.isNotEmpty()){
 
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(email.text.toString(),password.text.toString())
-                    .addOnSuccessListener { Toast.makeText(requireContext(), "welcome", Toast.LENGTH_SHORT).show()
+                    .addOnSuccessListener { Toast.makeText(requireContext(), "Welcome", Toast.LENGTH_SHORT).show()
                         val fragment1 = MainFragments()
                         val transaction = fragmentManager?.beginTransaction()
                         transaction?.replace(R.id.mainContainer, fragment1)
@@ -49,6 +49,12 @@ class LoginFrag : Fragment() {
 
                     }
             }
+        }
+        reset.setOnClickListener {
+            val fragment1 = PasswordRecover()
+            val transaction = fragmentManager?.beginTransaction()
+            transaction?.replace(R.id.mainContainer, fragment1)
+            transaction?.commit()
         }
         return view
     }
