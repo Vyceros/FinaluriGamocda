@@ -2,4 +2,8 @@
     <string name="app_name">FInaluriTerm</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="croco">
+
+        <ul><li><a href = "http://croconet.ge/">Watch the movie here!</a></li></ul>
+    </string>
 </resources>

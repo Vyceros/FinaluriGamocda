@@ -37,7 +37,7 @@ class MainFragments:Fragment(R.layout.main_fragment) {
 
                 R.id.profile-> {
                     // Replace the current fragment with Fragment1
-                    val fragment1 = Profile()
+                    val fragment1 = OtherFragment()
                     val transaction = fragmentManager?.beginTransaction()
                     transaction?.replace(R.id.mainContainer1, fragment1)
                     transaction?.commit()

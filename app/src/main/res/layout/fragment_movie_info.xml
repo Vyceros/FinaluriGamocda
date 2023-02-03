@@ -15,6 +15,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/croco"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/croco"
+        app:layout_constraintBottom_toTopOf="@+id/agwera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saxeli" />
+    <TextView
         android:id="@+id/saxeli"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
