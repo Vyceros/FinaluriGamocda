@@ -23,7 +23,7 @@ This application is using Firebase Authentication. After registration, users can
 - RecyclerView is used so you can scroll through the movies
 - Firebase Authentication is used for registration, log in and password changes
 - View Pager 2 is used to navigate between favorited movies and password change pages
-
+- Safe Args for data transfer for when you click on a movie to display it's image, name and description
 
 ## Authors
 
